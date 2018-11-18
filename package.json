@@ -4,11 +4,34 @@
   "description": "A coding challenge to assess your ability to navigate an express server implementation.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint .",
+    "unit": "istanbul cover spec/unit/jasmine.js --config=spec/support/istanbul.json",
+    "integration": "node spec/integration/jasmine.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsend": "^1.0.2",
+    "mongoose": "^5.3.12",
+    "mongoose-error-handler": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "^1.0.0",
+    "uid-safe": "^2.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.3.0",
+    "jasmine-terminal-reporter": "^1.0.3",
+    "proxyquire": "^2.1.0",
+    "random-world": "^1.2.1",
+    "rootpath": "^0.1.2",
+    "supertest": "^3.3.0"
   }
 }

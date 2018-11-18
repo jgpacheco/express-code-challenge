@@ -1,8 +1,10 @@
-const express = require('express');
-const app = express();
+const mongoose = require('mongoose');
+const app = require('./app');
 
-const index = require('./routes/index.js');
+const port = process.env.PORT || '3000';
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/bibliotech';
 
-app.get('/', index);
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 
-app.listen(3000, () => console.log(`Open http://localhost:3000 to see a response.`));
+// eslint-disable-next-line no-console
+app.listen(port, () => console.log('Open http://localhost:3000 to see a response.'));
